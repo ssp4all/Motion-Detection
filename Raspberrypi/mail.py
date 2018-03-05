@@ -20,7 +20,7 @@ msg = MIMEMultipart()
 msg['From'] = From
 msg['To'] = To
 msg['Date'] = formatdate(localtime=True)
-msg['Subject'] = 'Automated Home'
+msg['Subject'] = 'Intruder Alert'
 
 msg.attach(MIMEText('Someone is waiting'))
 
