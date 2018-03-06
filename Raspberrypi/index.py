@@ -15,25 +15,19 @@ import sys
 import os
 from stat import *
 
-
 def take_photo():
-	#yaad karne de 
 	subprocess.call('/var/www/capture_img.sh')
-
-
-
 def send_mail():
 	filePath = "/var/www/file.jpg"
-
-    From = 'motionsensor4all@gmail.com'
-    To = '2015suraj.pawar@ves.ac.in'
-    password = 'motionsensor4all@gmail'
-    msg = MIMEMultipart()
-    msg['Date'] = formatdate(localtime=True)
-    msg['Subject'] = 'Intruder Alert'
+	From = 'motionsensor4all@gmail.com'
+	To = '2015suraj.pawar@ves.ac.in'
+	password = 'motionsensor4all@gmail'
+	msg = MIMEMultipart()
+	msg['Date'] = formatdate(localtime=True)
+	msg['Subject'] = 'Intruder Alert'
 	msg['Date'] = formatdate(localtime=True)
 
-	msg.attach(MIMEText('Someone is waiting'))
+	msg.attach(MIMEText('Some one is intruding ..LOL!!!'))
 	smtp = smtplib.SMTP('smtp.gmail.com:587')
 	smtp.starttls()
 	smtp.login(From, password)
@@ -87,8 +81,6 @@ def send_msg():
 	        #return()
 
 	print("success")
-
-
 
 while(True):
 	if GPIO.input(22)==1: 
